@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  telegram_webhook TelegramWebhooksController
+  telegram_webhook Routers::BotRouter
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

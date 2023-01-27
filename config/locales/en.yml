@@ -1,4 +1,10 @@
 en:
-  telegram_webhooks:
-    start:
-      hi: Hi there!
+  help: |
+    /start - Register or Show Main Menu
+    /main_menu - Show Main Menu
+    /help - Show this message
+  defaults:
+    confirmation_dialog:
+      text: Are you sure?
+      yes_button: 'Yes'
+      no_button: 'No'

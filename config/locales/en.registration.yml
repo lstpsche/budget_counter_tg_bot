@@ -1,0 +1,22 @@
+en:
+  registration:
+    new_user_greeting: Hi there! We see you're a new user, so let's setup your account. Promise, it won't take long :)
+    registration_completed: You're set up and ready to start using <b>Budget Counter Bot</b>!
+    user_setup:
+      user_created: Your user account has been successfully created!
+      could_not_create_user: Could not create your user account. Please, notify @lstpsche about it.
+      confirm_setup_restart: Would you like to try again?
+      restart: Let's try again
+      goodbye: Have a good one!
+    budget_setup:
+      start_setup: Now let's setup your budget settings.
+      preferred_currency: What is your preferred currency (ex. USD)?
+      what_monthly_budget: What is your monthly budget in %{currency}?
+      confirm_monthly_budget: "Your monthly budget is %{budget} %{currency}.\nIs that right?"
+      change_budget_setup:
+        question: What do you want to change?
+        buttons:
+          currency: Currency
+          monthly_budget: Monthly budget
+      errors:
+        could_not_set_currency: Could not set your preferred currency. Please, notify @lstpsche about it if it would happen again.
