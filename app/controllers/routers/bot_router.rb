@@ -10,10 +10,10 @@ module Routers
     ## ALL actions should have UNIQUE NAME ##
     #########################################
     include Scopes::SignUpScope
-    include Scopes::MainMenuScope
+    include Scopes::MenuScope
 
     def start!(*)
-      return redirect_to :main_menu! if user.present?
+      return redirect_to :menu! if user.present?
 
       notify text: t('registration.new_user_greeting'),
              redirect_to_action: :setup_user!
@@ -24,7 +24,15 @@ module Routers
     end
 
     def callback_query(callback)
-      redirect_to *callback.split(':')
+      router, action_params = callback.split('::')
+      action, params_string = action_params&.split('?')
+      params = Rack::Utils.parse_nested_query(params_string)&.with_indifferent_access
+
+      if params.present?
+        return redirect_to router, action, params
+      end
+
+      redirect_to router, action
     end
 
     def message(*)

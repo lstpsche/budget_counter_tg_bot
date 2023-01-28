@@ -37,7 +37,7 @@ module Telegram
       def monthly_budget_confirmation!(*)
         confirm_info_inline text: t('registration.budget_setup.confirm_monthly_budget',
                                    budget: session[:monthly_budget_to_set], currency: user.currency),
-                            context: :confirm_monthly_budget!
+                            router: :confirm_monthly_budget!
       end
 
       def confirm_monthly_budget!(answer)
@@ -45,16 +45,16 @@ module Telegram
           save_monthly_budget_to_user
 
           notify text: t('registration.registration_completed'),
-                 redirect_to_action: :main_menu!
+                 redirect_to_action: :menu!
         else
           redirect_to :change_budget_setup!
         end
       end
 
       def change_budget_setup!
-        inline_keyboard text: t('registration.budget_setup.change_budget_setup.question'),
-                        buttons: change_budget_setup_buttons,
-                        context: :change_budget_setup_answer!
+        inline_keyboard text: t('views.change_budget_setup.text'),
+                        buttons: inline_buttons_from_t(t_path: 'views.change_budget_setup.keyboard'),
+                        router: :change_budget_setup_answer!
       end
 
       def change_budget_setup_answer!(answer)

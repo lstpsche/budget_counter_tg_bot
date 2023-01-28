@@ -26,6 +26,6 @@ module RegistrationHelper
   ################# BUTTONS #################
 
   def change_budget_setup_buttons
-    inline_buttons_from_t(t_path: 'registration.budget_setup.change_budget_setup.buttons')
+    inline_buttons_from_t(t_path: 'registration.budget_setup.change_budget_setup.keyboard')
   end
 end
