@@ -1,10 +1,10 @@
 en:
   help: |
     /start - Register or Show Main Menu
-    /main_menu - Show Main Menu
+    /menu - Show Main Menu
+    /log_expense - Log an expense (ex. /log_expense 50 food delivery)
     /help - Show this message
-  defaults:
-    confirmation_dialog:
-      text: Are you sure?
-      yes_button: 'Yes'
-      no_button: 'No'
+  expense:
+    create: What's the amount of expense in %{currency}?
+    expense_added: Expense successfully added
+    amount_empty: "Please, specify the amount of expense in %{currency}\n<b>tip</b>: Type comment to expense after the amount"

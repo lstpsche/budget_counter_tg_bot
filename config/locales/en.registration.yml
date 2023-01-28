@@ -13,10 +13,5 @@ en:
       preferred_currency: What is your preferred currency (ex. USD)?
       what_monthly_budget: What is your monthly budget in %{currency}?
       confirm_monthly_budget: "Your monthly budget is %{budget} %{currency}.\nIs that right?"
-      change_budget_setup:
-        question: What do you want to change?
-        buttons:
-          currency: Currency
-          monthly_budget: Monthly budget
       errors:
         could_not_set_currency: Could not set your preferred currency. Please, notify @lstpsche about it if it would happen again.
