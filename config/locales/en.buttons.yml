@@ -28,7 +28,7 @@ en:
         text: Main Menu
         keyboard:
           row_1:
-            button_1: Button 1
-            button_2_1: Button 2.1
+            expense: Log Expense
           row_2:
+            button_2_1: Button 2.1
             button_2_2: Button 2.2

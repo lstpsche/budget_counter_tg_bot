@@ -1,7 +1,6 @@
 module Telegram
   module Menu
     module MenuActions
-      include ActionsBase
       include MenuHelper
 
       def menu!(*)
