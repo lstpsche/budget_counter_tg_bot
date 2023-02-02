@@ -3,6 +3,7 @@ module Telegram
     module SetupBudgetActions
       include ActionsBase
       include RegistrationHelper
+      include BudgetHelper
 
       def start_budget_setup!(*)
         notify text: t('registration.budget_setup.start_setup'),
@@ -10,21 +11,17 @@ module Telegram
       end
 
       def currency_setup!(*)
-        question text: t('registration.budget_setup.preferred_currency'),
-                 context: :set_currency!
+        set_currency_question context: :set_currency!
       end
 
       def set_currency!(currency)
-        if user.budget.update(currency: currency.upcase)
-          redirect_to :monthly_budget_setup!
-        else
-          notify_error redirect_to_action: :currency_setup!
-        end
+        set_currency currency,
+                     context: :monthly_budget_setup!,
+                     error_context: :currency_setup!
       end
 
       def monthly_budget_setup!(*)
-        question text: t('registration.budget_setup.what_monthly_budget', currency: user.budget.currency),
-                 context: :set_monthly_budget!
+        set_monthly_budget_question context: :set_monthly_budget!
       end
 
       def set_monthly_budget!(*budget)
@@ -60,19 +57,20 @@ module Telegram
       end
 
       def first_day_of_month_setup!(*)
-        question text: t('registration.budget_setup.first_day_of_month'),
-                 context: :set_first_day_of_month!
+        set_first_day_of_month_question context: :set_first_day_of_month!
       end
 
       def set_first_day_of_month!(*args)
         first_day = args.first
 
-        if first_day.to_i != 0 && first_day.to_i <= 31 && user.budget.update(first_day_of_month: first_day.to_i)
-          notify text: t('registration.registration_completed'),
-                 redirect_to_action: :menu!
-        else
-          notify_error redirect_to_action: :first_day_of_month_setup!
-        end
+        set_first_day_of_month first_day,
+                               context: :finish_budget_setup!,
+                               error_context: :first_day_of_month_setup!
+      end
+
+      def finish_budget_setup!(*)
+        notify text: t('registration.registration_completed'),
+               redirect_to_action: :menu!
       end
     end
   end

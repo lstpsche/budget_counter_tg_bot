@@ -9,3 +9,8 @@ en:
     create: "What's the amount of expense in %{currency}?\n\n<b>tip</b>: You can add a comment to expense, just type it after the amount."
     expense_added: "Expense successfully added:\n<b>Amount</b>: %{amount}\n<b>Comment</b>: %{comment}"
     amount_empty: "Please, specify the amount of expense in %{currency}\n\n<b>tip</b>: Type comment to expense after the amount."
+  settings:
+    budget_settings:
+      currency_set: Currency saved!
+      monthly_budget_set: Monthly Budget saved!
+      first_day_set: First Day of Month saved!

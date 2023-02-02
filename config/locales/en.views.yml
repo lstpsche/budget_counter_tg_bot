@@ -30,5 +30,32 @@ en:
           row_1:
             expense: Log Expense
           row_2:
-            button_2_1: Button 2.1
+            settings: Settings
             button_2_2: Button 2.2
+      settings:
+        text: Settings
+        keyboard:
+          row_1:
+            budget_settings: Budget Settings
+            common_settings: Common Settings
+          row_2:
+            menu_back_to_root: << Back
+      budget_settings:
+        text: Budget Settings
+        keyboard:
+          row_1:
+            settings_currency: Currency
+          row_2:
+            settings_monthly_budget: Monthly Budget
+          row_3:
+            settings_first_day_of_month: First Day of Month
+          row_4:
+            settings: << Back
+      common_settings:
+        text: Common Settings
+        keyboard:
+          row_1:
+            settings_amount_stylization: Expense Amount Stylization
+          row_2:
+            settings: << Back
+
