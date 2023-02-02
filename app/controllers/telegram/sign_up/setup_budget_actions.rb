@@ -15,16 +15,15 @@ module Telegram
       end
 
       def set_currency!(currency)
-        if user.update(currency: currency.upcase)
+        if user.budget.update(currency: currency.upcase)
           redirect_to :monthly_budget_setup!
         else
-          notify text: t('registration.budget_setup.errors.could_not_set_currency'),
-                 redirect_to_action: :currency_setup!
+          notify_error redirect_to_action: :currency_setup!
         end
       end
 
       def monthly_budget_setup!(*)
-        question text: t('registration.budget_setup.what_monthly_budget', currency: user.currency),
+        question text: t('registration.budget_setup.what_monthly_budget', currency: user.budget.currency),
                  context: :set_monthly_budget!
       end
 
@@ -36,7 +35,7 @@ module Telegram
 
       def monthly_budget_confirmation!(*)
         confirm_info_inline text: t('registration.budget_setup.confirm_monthly_budget',
-                                   budget: session[:monthly_budget_to_set], currency: user.currency),
+                                   budget: session[:monthly_budget_to_set], currency: user.budget.currency),
                             router: :confirm_monthly_budget!
       end
 
@@ -44,8 +43,7 @@ module Telegram
         if answer == 'true'
           save_monthly_budget_to_user
 
-          notify text: t('registration.registration_completed'),
-                 redirect_to_action: :menu!
+          redirect_to :first_day_of_month_setup!
         else
           redirect_to :change_budget_setup!
         end
@@ -59,6 +57,22 @@ module Telegram
 
       def change_budget_setup_answer!(answer)
         redirect_to "#{answer}_setup!"
+      end
+
+      def first_day_of_month_setup!(*)
+        question text: t('registration.budget_setup.first_day_of_month'),
+                 context: :set_first_day_of_month!
+      end
+
+      def set_first_day_of_month!(*args)
+        first_day = args.first
+
+        if first_day.to_i != 0 && first_day.to_i <= 31 && user.budget.update(first_day_of_month: first_day.to_i)
+          notify text: t('registration.registration_completed'),
+                 redirect_to_action: :menu!
+        else
+          notify_error redirect_to_action: :first_day_of_month_setup!
+        end
       end
     end
   end

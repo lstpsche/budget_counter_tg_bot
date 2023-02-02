@@ -21,6 +21,10 @@ module MessageHelper
     send_text text
   end
 
+  def notify_error(text: t('error_response'), redirect_to_action:)
+    notify text: text, redirect_to_action: redirect_to_action
+  end
+
   ############## SPECIFIC ##############
 
   DEFAULT_CONFIRM_BUTTONS_REPLY = [[

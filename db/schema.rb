@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_28_220158) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_02_172528) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "budgets", force: :cascade do |t|
+    t.string "currency", default: "USD", null: false
+    t.float "monthly_budget", default: 0.0, null: false
+    t.integer "first_day_of_month", default: 1, null: false
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_budgets_on_user_id"
+  end
 
   create_table "expenses", force: :cascade do |t|
     t.float "amount", null: false
@@ -31,9 +41,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_28_220158) do
     t.string "context", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "currency", default: "USD", null: false
-    t.float "monthly_budget", default: 0.0, null: false
-    t.integer "salary_day", default: 1, null: false
   end
 
 end
