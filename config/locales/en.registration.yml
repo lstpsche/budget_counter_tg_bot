@@ -13,5 +13,4 @@ en:
       preferred_currency: What is your preferred currency (ex. USD)?
       what_monthly_budget: What is your monthly budget in %{currency}?
       confirm_monthly_budget: "Your monthly budget is %{budget} %{currency}.\nIs that right?"
-      errors:
-        could_not_set_currency: Could not set your preferred currency. Please, notify @lstpsche about it if it would happen again.
+      first_day_of_month: What is the first day of accounting month (salary day)?

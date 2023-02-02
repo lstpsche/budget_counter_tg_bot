@@ -4,7 +4,8 @@ en:
     /menu - Show Main Menu
     /log_expense - Log an expense (ex. /log_expense 50 food delivery)
     /help - Show this message
+  error_response: Could not complete the operation. Please, notify @lstpsche if the error persists.
   expense:
-    create: What's the amount of expense in %{currency}?
-    expense_added: Expense successfully added
-    amount_empty: "Please, specify the amount of expense in %{currency}\n<b>tip</b>: Type comment to expense after the amount"
+    create: "What's the amount of expense in %{currency}?\n\n<b>tip</b>: You can add a comment to expense, just type it after the amount."
+    expense_added: "Expense successfully added:\n<b>Amount</b>: %{amount}\n<b>Comment</b>: %{comment}"
+    amount_empty: "Please, specify the amount of expense in %{currency}\n\n<b>tip</b>: Type comment to expense after the amount."

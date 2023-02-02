@@ -20,7 +20,7 @@ module RegistrationHelper
   end
 
   def save_monthly_budget_to_user
-    user.update(monthly_budget: session.delete(:monthly_budget_to_set))
+    user.budget.update(monthly_budget: session.delete(:monthly_budget_to_set))
   end
 
   ################# BUTTONS #################
