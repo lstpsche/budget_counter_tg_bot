@@ -1,0 +1,70 @@
+# always use the next template for buttons (callback = action?param1=val1&param2=val2):
+# view_name:
+#   text: MESSAGE_TEXT
+#   keyboard:
+#     row_1: # name doesn't matter
+#       button_1_callback: BUTTON_1_TEXT
+#       button_2_callback: BUTTON_2_TEXT
+#     row_2: # name doesn't matter
+#       button_3_callback: BUTTON_3_TEXT
+#       button_4_callback: BUTTON_4_TEXT
+
+en:
+  views:
+    default_confirmation:
+      text: Are you sure?
+      keyboard:
+        row_1:
+          true: 'Yes'
+          false: 'No'
+    change_budget_setup:
+      text: What do you want to change?
+      keyboard:
+        row_1:
+          currency: Currency
+          monthly_budget: Monthly budget
+    menu:
+      root:
+        text: Main Menu
+        keyboard:
+          row_1:
+            expense: Log Expense
+          row_2:
+            settings: Settings
+            button_2_2: Button 2.2
+      settings:
+        text: Settings
+        keyboard:
+          row_1:
+            budget_settings: Budget Settings
+            common_settings: Common Settings
+          row_2:
+            menu_back_to_root: << Back to root
+      budget_settings:
+        text: Budget Settings
+        keyboard:
+          row_1:
+            settings_currency: Currency
+            settings_monthly_budget: Monthly Budget
+          row_2:
+            settings_first_day_of_month: First Day of Month
+          row_3:
+            settings: << Back to Settings
+          row_4:
+            menu_back_to_root: << Back to root
+      common_settings:
+        text: Common Settings
+        keyboard:
+          row_1:
+            settings_amount_stylization: Expense Amount Stylization
+          row_2:
+            settings: << Back to Settings
+          row_3:
+            menu_back_to_root: << Back to root
+      settings_amount_stylization:
+        text: Common Settings
+        keyboard:
+          row_1:
+            common_settings: << Back to Common Settings
+          row_2:
+            menu_back_to_root: << Back to root

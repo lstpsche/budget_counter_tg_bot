@@ -1,0 +1,9 @@
+en:
+  features:
+    amount_stylization_settings:
+      button_text: "Amount Stylization: Turn %{value}"
+      true: "ON"
+      false: "OFF"
+      callback_alert:
+        true: Amount Stylization Turned ON
+        false: Amount Stylization Turned OFF

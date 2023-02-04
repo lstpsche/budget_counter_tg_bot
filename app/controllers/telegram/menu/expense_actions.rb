@@ -11,7 +11,7 @@ module Telegram
       end
 
       def log_expense!(amount = '', *comment)
-        if amount.match(/^\d+\.\d+$/).blank?
+        if amount.match(/(^\d+\.\d+$|^\d+$)/).blank?
           return question text: t('expense.amount_empty', currency: user.budget.currency),
                           context: :log_expense!
         end
