@@ -6,9 +6,9 @@ en:
     /help - Show this message
   error_response: Could not complete the operation. Please, notify @lstpsche if the error persists.
   expense:
-    create: "What's the amount of expense in %{currency}?\n\n<b>tip</b>: You can add a comment to expense, just type it after the amount."
+    create: "What's the amount of expense in %{currency}?\n\n<b>tip</b>: Use dot(.) in floating dot numbers.\n<b>tip</b>: You can add a comment to expense, just type it after the amount."
     expense_added: "Expense successfully added:\n<b>Amount</b>: %{amount}\n<b>Comment</b>: %{comment}"
-    amount_empty: "Please, specify the amount of expense in %{currency}\n\n<b>tip</b>: Type comment to expense after the amount."
+    amount_empty: "Please, specify the amount of expense in %{currency}\n\n<b>tip</b>: Use dot(.) in floating dot numbers.\n<b>tip 2</b>: Type comment to expense <b>after</b> the amount."
   settings:
     budget_settings:
       currency_set: Currency saved!

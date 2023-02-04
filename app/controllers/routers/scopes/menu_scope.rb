@@ -1,13 +1,15 @@
 module Routers
   module Scopes
     module MenuScope
-      # menu views
+      # Menu views
       include Telegram::Menu::MenuActions
+
+      # Settings
       include Telegram::Menu::Settings::SettingsActions
       include Telegram::Menu::Settings::BudgetSettingsActions
       include Telegram::Menu::Settings::CommonSettingsActions
 
-      # features
+      # Features
       include Telegram::Menu::ExpenseActions
     end
   end

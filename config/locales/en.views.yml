@@ -39,23 +39,32 @@ en:
             budget_settings: Budget Settings
             common_settings: Common Settings
           row_2:
-            menu_back_to_root: << Back
+            menu_back_to_root: << Back to root
       budget_settings:
         text: Budget Settings
         keyboard:
           row_1:
             settings_currency: Currency
-          row_2:
             settings_monthly_budget: Monthly Budget
-          row_3:
+          row_2:
             settings_first_day_of_month: First Day of Month
+          row_3:
+            settings: << Back to Settings
           row_4:
-            settings: << Back
+            menu_back_to_root: << Back to root
       common_settings:
         text: Common Settings
         keyboard:
           row_1:
             settings_amount_stylization: Expense Amount Stylization
           row_2:
-            settings: << Back
-
+            settings: << Back to Settings
+          row_3:
+            menu_back_to_root: << Back to root
+      settings_amount_stylization:
+        text: Common Settings
+        keyboard:
+          row_1:
+            common_settings: << Back to Common Settings
+          row_2:
+            menu_back_to_root: << Back to root
