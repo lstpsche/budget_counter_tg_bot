@@ -19,7 +19,9 @@ module Telegram
         comment_text = comment.join(' ')
         create_expense(amount: amount, comment: comment_text)
 
-        notify text: t('expense.expense_added', amount: stylize_expense_amount(amount), comment: comment_text),
+        result_amount = user.amount_stylization? ? stylize_expense_amount(amount) : amount
+
+        notify text: t('expense.expense_added', amount: result_amount, comment: comment_text),
                redirect_to_action: :menu!
       end
     end
